@@ -1,0 +1,17 @@
+dist: xenial
+language: python
+python:
+  - "3.6"
+
+deploy:
+  - provider: releases
+    api_key: "$GITHUB_TOKEN"
+    file_glob: true
+    file: "$TRAVIS_BUILD_DIR/build/*"
+    skip_cleanup: true
+    overwrite: true
+    on:
+      tags: true
+
+script:
+  - python build_default_zips.py
