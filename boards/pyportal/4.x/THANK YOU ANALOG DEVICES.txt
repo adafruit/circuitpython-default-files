@@ -1,0 +1,18 @@
+This product could not have happened with out the amazing support 
+and sponsorship from Analog Devices (https://www.analog.com/)
+
+Analog Devices is famous for their high quality sensors. In fact, the first
+temperature sensor we ever used here at Adafruit was the TMP36 - an analog
+temperature sensor in a 3-pin package. It was first released in 1996, and
+since then ADI has only improved on their designs to create more precise
+temperature sensors!
+
+The PyPortal features the ADT7410, the latest precision temperature
+sensor from the experts at sensing at Analog Devices! The ADT7410 lets
+your PyPortal become a self-contained Internet of Things temperature
+data logger that can sense and record the world around it and then either
+display it on the lovely screen, or upload it to adafruit.io for long
+term storage and analysis.
+
+Check out some of the cool new sensors, ADCs, DSPs, and microcontrollers
+that are available to makers and engineers at https://www.analog.com/
