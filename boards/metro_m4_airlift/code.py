@@ -1,5 +1,5 @@
-# Metro M4 IO demo
-# Welcome to CircuitPython 3.1 :)
+# Metro M4 AirLift IO demo
+# Welcome to CircuitPython 4 :)
 
 import time
 import board
