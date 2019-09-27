@@ -7,6 +7,9 @@ import touchio
 # Set this to True to turn the touchpads into a keyboard
 ENABLE_KEYBOARD = False
 
+# Set this to true if you're on windows, false if you're on mac
+WINDOWS_COMPUTER = True
+
 # Used if we do HID output, see below
 if ENABLE_KEYBOARD:
     from adafruit_hid.keyboard import Keyboard
@@ -75,13 +78,22 @@ while True:
         leds[i].value = c
     if caps[0]:
         if ENABLE_KEYBOARD:
-            type_alt_code(234)
+            if WINDOWS_COMPUTER:
+                type_alt_code(234)
+            else:
+                kbd.send(Keycode.ALT, Keycode.Z)
     if caps[1]:
         if ENABLE_KEYBOARD:
-            type_alt_code(230)
+            if WINDOWS_COMPUTER:
+                type_alt_code(230)
+            else:
+                kbd.send(Keycode.ALT, Keycode.M)
     if caps[2]:
         if ENABLE_KEYBOARD:
-            type_alt_code(227)
+            if WINDOWS_COMPUTER:
+                type_alt_code(227)
+            else:
+                kbd.send(Keycode.ALT, Keycode.P)
     if caps[3]:
         if ENABLE_KEYBOARD:
             layout.write('https://www.digikey.com/python\n')
