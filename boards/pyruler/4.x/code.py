@@ -7,8 +7,9 @@ import touchio
 # Set this to True to turn the touchpads into a keyboard
 ENABLE_KEYBOARD = False
 
-# Set this to true if you're on windows, false if you're on mac
-WINDOWS_COMPUTER = True
+# Set your computer type to True, if Linux set both to False
+WINDOWS = True
+MAC = False
 
 # Used if we do HID output, see below
 if ENABLE_KEYBOARD:
@@ -78,23 +79,54 @@ while True:
         leds[i].value = c
     if caps[0]:
         if ENABLE_KEYBOARD:
-            if WINDOWS_COMPUTER:
+            if WINDOWS:
                 type_alt_code(234)
-            else:
+            elif MAC:
                 kbd.send(Keycode.ALT, Keycode.Z)
+            else:
+                kbd.press(Keycode.CONTROL)
+                kbd.press(Keycode.SHIFT)
+                kbd.press(Keycode.U)
+                kbd.release_all()
+                kbd.send(Keycode.TWO)
+                kbd.send(Keycode.ONE)
+                kbd.send(Keycode.TWO)
+                kbd.send(Keycode.SIX)
+                kbd.send(Keycode.ENTER)
     if caps[1]:
         if ENABLE_KEYBOARD:
-            if WINDOWS_COMPUTER:
+            if WINDOWS:
                 type_alt_code(230)
-            else:
+            elif MAC:
                 kbd.send(Keycode.ALT, Keycode.M)
+            else:
+                kbd.press(Keycode.CONTROL)
+                kbd.press(Keycode.SHIFT)
+                kbd.press(Keycode.U)
+                kbd.release_all()
+                kbd.send(Keycode.ZERO)
+                kbd.send(Keycode.THREE)
+                kbd.send(Keycode.B)
+                kbd.send(Keycode.C)
+                kbd.send(Keycode.ENTER)
     if caps[2]:
         if ENABLE_KEYBOARD:
-            if WINDOWS_COMPUTER:
+            if WINDOWS:
                 type_alt_code(227)
-            else:
+            elif MAC:
                 kbd.send(Keycode.ALT, Keycode.P)
+            else:
+                kbd.press(Keycode.CONTROL)
+                kbd.press(Keycode.SHIFT)
+                kbd.press(Keycode.U)
+                kbd.release_all()
+                kbd.send(Keycode.ZERO)
+                kbd.send(Keycode.THREE)
+                kbd.send(Keycode.C)
+                kbd.send(Keycode.ZERO)
+                kbd.send(Keycode.ENTER)
     if caps[3]:
         if ENABLE_KEYBOARD:
             layout.write('https://www.digikey.com/python\n')
     time.sleep(0.1)
+    
