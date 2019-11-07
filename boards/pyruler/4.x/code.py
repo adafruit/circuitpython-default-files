@@ -7,9 +7,12 @@ import touchio
 # Set this to True to turn the touchpads into a keyboard
 ENABLE_KEYBOARD = False
 
-# Set your computer type to True, if Linux set both to False
-WINDOWS = True
-MAC = False
+WINDOWS = "W"
+MAC = "M"
+LINUX = "L"  # and Chrome OS
+
+# Set your computer type to one of the above
+OS = WINDOWS
 
 # Used if we do HID output, see below
 if ENABLE_KEYBOARD:
@@ -79,13 +82,12 @@ while True:
         leds[i].value = c
     if caps[0]:
         if ENABLE_KEYBOARD:
-            if WINDOWS:
+            if OS == WINDOWS:
                 type_alt_code(234)
-            elif MAC:
+            elif OS == MAC:
                 kbd.send(Keycode.ALT, Keycode.Z)
-            else:
-                kbd.press(Keycode.CONTROL)
-                kbd.press(Keycode.SHIFT)
+            elif OS == LINUX:
+                kbd.press(Keycode.CONTROL, Keycode.SHIFT)
                 kbd.press(Keycode.U)
                 kbd.release_all()
                 kbd.send(Keycode.TWO)
@@ -95,13 +97,12 @@ while True:
                 kbd.send(Keycode.ENTER)
     if caps[1]:
         if ENABLE_KEYBOARD:
-            if WINDOWS:
+            if OS == WINDOWS:
                 type_alt_code(230)
-            elif MAC:
+            elif OS == MAC:
                 kbd.send(Keycode.ALT, Keycode.M)
-            else:
-                kbd.press(Keycode.CONTROL)
-                kbd.press(Keycode.SHIFT)
+            elif OS == LINUX:
+                kbd.press(Keycode.CONTROL, Keycode.SHIFT)
                 kbd.press(Keycode.U)
                 kbd.release_all()
                 kbd.send(Keycode.ZERO)
@@ -111,13 +112,12 @@ while True:
                 kbd.send(Keycode.ENTER)
     if caps[2]:
         if ENABLE_KEYBOARD:
-            if WINDOWS:
+            if OS == WINDOWS:
                 type_alt_code(227)
-            elif MAC:
+            elif OS == MAC:
                 kbd.send(Keycode.ALT, Keycode.P)
-            else:
-                kbd.press(Keycode.CONTROL)
-                kbd.press(Keycode.SHIFT)
+            elif OS == LINUX:
+                kbd.press(Keycode.CONTROL, Keycode.SHIFT)
                 kbd.press(Keycode.U)
                 kbd.release_all()
                 kbd.send(Keycode.ZERO)
@@ -129,4 +129,3 @@ while True:
         if ENABLE_KEYBOARD:
             layout.write('https://www.digikey.com/python\n')
     time.sleep(0.1)
-    
