@@ -1,0 +1,1 @@
+Adafruit CircuitPython 5.0.0-beta.0 on 2019-11-19; Adafruit PyPortal with samd51j20
