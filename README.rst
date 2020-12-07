@@ -2,7 +2,7 @@ Introduction
 ============
 
 .. image:: https://img.shields.io/discord/327254708534116352.svg
-    :target: https://discord.gg/nBQh6qu
+    :target: https://adafru.it/discord
     :alt: Discord
 
 Copies of the default files for Adafruit's products that ship with CircuitPython. Versions are
