@@ -9,7 +9,7 @@ from adafruit_motor import servo
 import neopixel
 import busio
 import audioio
-import pulseio
+import pwmio
 import simpleio
 from adafruit_esp32spi import adafruit_esp32spi
 import adafruit_esp32spi.adafruit_esp32spi_requests as requests
@@ -53,7 +53,7 @@ for p in [board.D2, board.D3, board.D4]:
 
 # Servo on D5
 # create a PWMOut object on Pin D5
-pwm = pulseio.PWMOut(board.D5, duty_cycle=2 ** 15, frequency=50)
+pwm = pwmio.PWMOut(board.D5, duty_cycle=2 ** 15, frequency=50)
 servo = servo.Servo(pwm)
 
 # NeoPixel strip (of 16 LEDs) connected on D6
