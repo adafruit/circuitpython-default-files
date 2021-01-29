@@ -8,7 +8,7 @@ from digitalio import DigitalInOut, Direction, Pull
 from analogio import AnalogIn
 from audioio import WaveFile, AudioOut
 import touchio
-import pulseio
+import pwmio
 import neopixel
 from adafruit_motor import servo
 
@@ -43,7 +43,7 @@ for p in [board.D6, board.D9, board.D10]:
     buttons.append(button)
 
 # Servo on D12
-servo_pwm = pulseio.PWMOut(board.D12, frequency=50)
+servo_pwm = pwmio.PWMOut(board.D12, frequency=50)
 servo = servo.Servo(servo_pwm)
 
 # NeoPixel strip (of 16 LEDs) connected on D5
